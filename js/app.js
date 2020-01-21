@@ -16,14 +16,16 @@ window.addEventListener('keydown', function(e){
     audio.play();
     //checks specific key is pressed in the console
     console.log(key);
+    //adds the playing class to the key div
     key.classList.add("playing");
+    //runs the keyUp function
     keyUp();
-})
+});
 
 function keyUp () {window.addEventListener('keyup', function(e) {
         //key variable equals to the key div in the html connected to the specific key press
         const key = this.document.querySelector(`.key[data-key="${e.keyCode}"]`)
-        //checks specific key is pressed in the console
+        //removes the playing class from the key div on key up
         key.classList.remove("playing");
-    })
-}
+    });
+};
